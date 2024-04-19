@@ -1,0 +1,16 @@
+[
+    {
+        "eid" : 1 ,
+        "name" : "rose" , 
+        "password" : "rose" ,
+        "autditstatus" : "1" ,
+        "role" : "1"
+    } ,
+    {
+        "eid" : 2 ,
+        "name" : "jack" , 
+        "password" : "jack" ,
+        "autditstatus" : 1 ,
+        "role" : "0"
+    }
+]

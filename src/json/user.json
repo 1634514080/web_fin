@@ -1,0 +1,14 @@
+[
+    {
+    "pass": "user",
+    "checkPass": "147258",
+    "phone":"13546269770",
+    "type":"user"
+    },
+    {
+        "pass": "admin",
+        "checkPass": "123456",
+        "phone":"14735823262",
+        "type":"admin"
+    }
+]

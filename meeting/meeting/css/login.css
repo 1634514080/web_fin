@@ -1,0 +1,30 @@
+body{
+    background-color: #222538;
+}
+.loginDiv{
+    width: 400px;
+    height: 290px;
+    background-color:  rgb(45 53 69);
+    border-radius: 10px;
+    margin:200px auto ;
+}
+.loginTable{
+    margin: auto;
+}
+.loginTable tr{
+    height: 50px;
+}
+.loginTable input[type="text"] ,.loginTable input[type="password"]{
+    width: 280px;
+    height: 30px;
+}
+.btn{
+    height: 35px;
+    width: 130px;
+    color: white;
+    background: #42BECC;
+    font-size: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    border: 1px;
+}

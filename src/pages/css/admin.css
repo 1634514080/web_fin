@@ -1,0 +1,8 @@
+.login-header {
+    height: 10dvh;
+    background-color: #5DADE2 ; 
+    text-align: left;font-size: 24px;padding: 20px;align-items: center;
+    justify-content: left;
+    position:relative;
+    display: flex;
+}

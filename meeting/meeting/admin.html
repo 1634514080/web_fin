@@ -1,0 +1,106 @@
+<!--
+ * @Description: 
+ * @Author: wl
+ * @Date: 2024-03-15 09:13:34
+ * @LastEditTime: 2024-03-22 10:15:33
+ * @LastEditors: wl
+-->
+<!DOCTYPE html>
+<html lang="en"> 
+    <head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理员</title>
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet"
+     href="js/bootstrap-3.4.1-dist/css/bootstrap.min.css" />
+    <script type="text/javascript" src="js/jquery-1.11.0.js" ></script>
+    <script type="text/javascript" 
+    src="js/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/common.js" ></script>
+    <script type="text/javascript" src="js/data.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/menu.js"></script>
+    <script>
+        //希望加载页面的时候就能够获取到登录成功的对象数据
+        //1、先获取到登录成功的时候传递的ID值
+       var employId =  getParam("employId") ;
+       //2、遍历data.js中所有员工，查找满足条件的员工
+       for(var i = 0  ; i < employeeJsonArray.length ; i ++){
+           var employ = employeeJsonArray[i] ;
+           if(employeeJsonArray != undefined && employ.eid == employId){
+            //找到此员工
+            //3、将当前员工指向找到的员工
+            loginEmploy = employ ;         
+               break ;
+           }
+       }
+    </script>
+</head>
+<body>
+    <header>
+        <img src="img/main/head/logo/LOGO.jpg"/>
+        <!--SmartMeeting会议管理系统显示区域-->
+			<span style="font-weight:bold;line-height:44px;font-size:18px;font-family:'Britannic Bold';color:#3BC5BB;">SmartMeeting</span>
+			<span style="font-weight:bold;line-height:44px;font-size:18px;font-family:'Segoe UI Emoji Bold';color:#FF9A4C;">会议管理系统</span>
+        <!--实现头部的右半部分-->
+        <div class="headerRight">
+            <span id = "showName" >欢迎helloahello登录本系统</span>
+            <img src="img/StatBar_time.gif" style="margin-left: 20px;"/>
+            <!--添加时间显示区域-->
+            <span id = "showTime"></span>
+            &nbsp; &nbsp; &nbsp; &nbsp;
+            <a href="#">修改密码</a>
+            &nbsp; &nbsp;
+            <a href="#">退出登录</a>
+        </div>
+        </header>
+        <!--首页主体部分，采用bootstrap栅格-->
+        <div class="container-fluid">    
+            <div class="row">
+                <!--左侧菜单栏区域，占位2列-->
+                <div style=" margin:0;padding:0;" class="col-md-2 left">
+                    <!--菜单栏区域采用ul无序列表的形式-->
+                    <ul class="menu">
+                        <li class="active">
+                            <a href="#" style="margin-right: 50px;">个人通知</a>
+                            <span class="glyphicon glyphicon-menu-right"></span>
+                            <ul class="sub-menu">
+                               <li><a class="subactive" href="#">最新通知</a></li>
+                               <li><a href="#">我的预定</a></li>
+                               <li><a href="#">我的会议</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" style="margin-right: 50px;">人员管理</a>
+                            <span class="glyphicon glyphicon-menu-right"></span>
+                            <ul class="sub-menu">
+                               <li><a href="#" id="deptSearch" onclick="deptManage()" >部门管理</a></li>
+                               <li><a href="#">员工注册</a></li>
+                               <li><a href="#">注册审批</a></li>
+                               <li><a href="#" id="searchEmployee"  ">搜索员工</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" style="margin-right: 50px;">会议预定</a>
+                            <span class="glyphicon glyphicon-menu-right"></span>
+                            <ul class="sub-menu">
+                               <li><a href="#">添加会议室</a></li>
+                               <li><a href="#">查看会议室</a></li>
+                               <li><a href="#" id="preMeeting"  >预定会议</a></li>
+                               <li><a href="#">搜索会议</a></li>
+                            </ul>
+                        </li>
+                        
+                    </ul>
+                </div>
+                
+                <!--右侧主体区域，占位10列-->
+                <div class="col-md-10 main" style="padding:0;">
+                    <iframe width="100%" height="650px" style="border: none;" id="myFrame" name="myFrame"></iframe>
+                </div>
+            </div>
+        </div>
+
+</body>
+</html>
